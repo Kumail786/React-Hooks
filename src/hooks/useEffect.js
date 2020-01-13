@@ -7,7 +7,7 @@ const Useeffect = () => {
   });
   useEffect(() => {
     console.log("Use Effect is running");
-  }, [counter.count]);
+  }, [counter.hello]);
   return (
     <div>
       {console.log("component Rendered")}
