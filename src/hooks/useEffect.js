@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 const Useeffect = () => {
   const [counter, setState] = useState({
@@ -7,10 +7,21 @@ const Useeffect = () => {
   });
   useEffect(() => {
     console.log("Use Effect is running");
-  },[counter.count]);
-  return <div>
-{console.log("component Rendered")}
-  </div>;
+  }, [counter.count]);
+  return (
+    <div>
+      {console.log("component Rendered")}
+      <p>{counter.count}</p>
+      <button
+        onClick={() => {
+          setState({
+            ...counter,
+            count: counter.count + 10
+          });
+        }}
+      >Increase Count</button>
+    </div>
+  );
 };
 
 export default Useeffect;
